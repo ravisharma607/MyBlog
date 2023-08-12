@@ -1,0 +1,109 @@
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginSignupCard{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    flex-direction: column;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2), -1px -1px 8px rgba(0,0,0,0.2);
+    padding: 40px 30px;
+}
+.loginSignupCard .heading{
+    color: gray;
+    font-size: 1.3rem;
+}
+.loginSignupCard form{
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+.loginSignupCard .fields{
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+}
+.loginSignupCard .fields ion-icon{
+    font-size: 1.8rem;
+    margin-top: 10px;
+    color: #2a93d5;
+}
+.loginSignupCard .fields input{
+    width: 80%;
+    font-size: 1rem;
+    margin-left: 10px;
+    padding: 10px 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+    font-weight: 500;
+}
+.loginSignupCard .action{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.loginSignupCard .action .break{
+    margin: 10px 0;
+}
+.loginSignupCard .action hr{
+    width: 60px;
+    margin: 0 10px;
+    height: 1px;
+    background-color: gray;
+}
+.btn{
+    padding: 5px 20px;
+    width: 40%;
+    font-size: 1rem;
+    background-color: #2a93d5;
+    border: 1px solid #2a93d5;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.btn:hover{
+    background-color: #ffff;
+    color: #2a93d5;
+}
+.profile_image{
+    margin: auto;
+    padding: auto;
+}
+.profile_image img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+.profile_image label{
+    background-color: #2a93d5;
+    margin-left: 10px;
+    color: #ffff;
+    cursor: pointer;
+    padding:5px 10px;
+}
+@media screen and (max-width:450px){
+    .loginSignupCard{
+        width: 330px;
+    }
+    .btn{
+        width: 60%;
+    }
+    .loginSignupCard .heading{
+        font-size: 1.1rem;
+    }
+    .loginSignupCard .fields{
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+    }
+    .loginSignupCard .fields input{
+        width: 100%;
+    }
+}

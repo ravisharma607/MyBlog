@@ -1,0 +1,15 @@
+.blogForm .inputs{
+    display: flex;
+    flex-direction: column;
+}
+.blogForm .inputs input{
+    padding: 5px 8px;
+    font-weight: 500;
+    margin: 10px 0;
+    border: 1px solid gray;
+    border-radius: 2px;
+    text-transform: capitalize;
+}
+.blogForm .btn{
+    margin-top: 10px;
+}

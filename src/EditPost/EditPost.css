@@ -1,0 +1,24 @@
+.inputs .fileBox{
+    text-align: center;
+}
+.inputs .fileBox img{
+    height: 150px;
+    width: 100%;
+}
+ .updateImg label{
+    display: block;
+    border: 1px solid #2a93d5;
+    padding: 5px 0;
+    cursor: pointer;
+    margin: 10px 0;
+    font-weight: 500;
+    background-color: #2a93d5;
+    color: #ffff;
+}
+.updateImg label:hover{
+    background-color: #ffff;
+    color: #2a93d5;
+}
+.blogForm .inputs input{
+    padding: 10px;
+}
