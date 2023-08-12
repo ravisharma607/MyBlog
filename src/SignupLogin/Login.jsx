@@ -25,14 +25,15 @@ const Login = ({loggedIn, setLoggedIn}) => {
         const { email, password } = user;
         if (email.trim() && password.trim()) {
             try {
-                const res = await axios.post('https://bloguserapi-production.up.railway.app/login', { email, password }); 
+                const res = await axios.post('https://bloguserapi-production.up.railway.app/login', { email, password },{withCredentials:true}); 
                 const token = res.data.token;
                 localStorage.setItem('my-token', token);
                 setLoggedIn(true)
                 navigate("/")
             }
             catch (err) {
-                toast.error(err.response.data.message);
+                // toast.error(err.response.data.message);
+                console.log('From Login',err);
             }
         }
         else {

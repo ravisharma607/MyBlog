@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "homepage": "https://ravisharma607.github.io/MyBlog",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
