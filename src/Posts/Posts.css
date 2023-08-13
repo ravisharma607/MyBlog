@@ -93,8 +93,9 @@
 @media screen and (max-width:400px){
     .author {
         flex-direction: column;
+        text-align: center;
     }
     .author img {
-        margin-right: 00px;
+        margin: 0 0 2px 0;
     }
 }
