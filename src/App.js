@@ -10,28 +10,23 @@ import Post from './Post/Post';
 import EditPost from './EditPost/EditPost';
 
 
-const Routing = () => {
+  
+  function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   return (
-    <Routes>
-      <Route path='/' element={<Layout loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}>
-        <Route index element={
-          <Posts />
-        } />
-        <Route path='/login' element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/create' element={loggedIn ? <CreatePost /> : <Navigate to="/login" />} />
-        <Route path='/post/:id' element={loggedIn ? <Post /> : <Navigate to="/" />} />
-        <Route path='/edit/:id' element={loggedIn ? <EditPost /> : <Navigate to="/" />} />
-      </Route>
-    </Routes>
-  )
-}
-
-function App() {
-  return (
     <>
-      <Routing />
+      <Routes>
+        <Route path='/' element={<Layout loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}>
+          <Route index element={
+            <Posts />
+          } />
+          <Route path='/login' element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/create' element={loggedIn ? <CreatePost /> : <Navigate to="/login" />} />
+          <Route path='/post/:id' element={loggedIn ? <Post /> : <Navigate to="/" />} />
+          <Route path='/edit/:id' element={loggedIn ? <EditPost /> : <Navigate to="/" />} />
+        </Route>
+      </Routes>
     </>
   );
 }
