@@ -32,8 +32,7 @@ const Login = ({loggedIn, setLoggedIn}) => {
                 navigate("/")
             }
             catch (err) {
-                // toast.error(err.response.data.message);
-                console.log('From Login',err);
+                toast.error(err.response.data.message);
             }
         }
         else {

@@ -89,3 +89,12 @@
         padding: 5px 0;
     }
 }
+
+@media screen and (max-width:400px){
+    .author {
+        flex-direction: column;
+    }
+    .author img {
+        margin-right: 00px;
+    }
+}
