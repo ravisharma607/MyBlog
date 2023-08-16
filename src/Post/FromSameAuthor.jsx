@@ -32,7 +32,6 @@ const FromSameAuthor = ({ authorID }) => {
     return (
         <div className="container">
             {postFromSameAuthor.length > 0 && postFromSameAuthor.map((item, index) => {
-                console.log('from auth',item);
                 return <div className="post flex" key={index}>
                     <div className="image">
                         <Link to={`/post/${item._id}`}>
