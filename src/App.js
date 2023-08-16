@@ -4,23 +4,23 @@ import Posts from './Posts/Posts';
 import Layout from './Layout/Layout';
 import Login from './SignupLogin/Login';
 import Register from './SignupLogin/Register';
-import { useState } from 'react';
 import CreatePost from './CreatePost/CreatePost';
 import Post from './Post/Post';
 import EditPost from './EditPost/EditPost';
-
-
+import { useAuth } from './AuthContext/AuthContext';
   
-  function App() {
-  const [loggedIn, setLoggedIn] = useState(false)
+function App() {
+  const { loggedIn } = useAuth();
   return (
     <>
       <Routes>
-        <Route path='/' element={<Layout loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}>
+        <Route path='/' element={<Layout />}>
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
           <Route index element={
             <Posts />
           } />
-          <Route path='/login' element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/create' element={loggedIn ? <CreatePost /> : <Navigate to="/login" />} />
           <Route path='/post/:id' element={loggedIn ? <Post /> : <Navigate to="/" />} />

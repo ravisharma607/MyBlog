@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 import './EditPost.css'
 import Editor from '../Editor/Editor';
 
@@ -30,7 +29,7 @@ const EditPost = () => {
     const updatePost = async (e) => {
         e.preventDefault();
         if (!title || !summary || !content || !files[0]) {
-            toast.warning('All fields are required')
+            toast.error('All fields are required')
             return;
         }
         const data = new FormData();
@@ -70,7 +69,7 @@ const EditPost = () => {
                     <button className="btn">Update Post</button>
                 </form>
             </div>
-            <ToastContainer />
+            <Toaster />
         </>
     )
 }

@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
+import { useAuth } from '../AuthContext/AuthContext';
 
 
-const Login = ({loggedIn, setLoggedIn}) => {
+
+const Login = () => {
     const navigate = useNavigate();
+
+    const {setLoggedIn } = useAuth();
+
+
     const [user, setUser] = useState({
         email: '', password: ''
     })
@@ -25,8 +30,9 @@ const Login = ({loggedIn, setLoggedIn}) => {
         const { email, password } = user;
         if (email.trim() && password.trim()) {
             try {
-                const res = await axios.post('https://bloguserapi-production.up.railway.app/login', { email, password },{withCredentials:true}); 
+                const res = await axios.post('https://bloguserapi-production.up.railway.app/login', { email, password }, { withCredentials: true });
                 const token = res.data.token;
+                toast.success(res.data.message)
                 localStorage.setItem('my-token', token);
                 setLoggedIn(true)
                 navigate("/")
@@ -67,7 +73,7 @@ const Login = ({loggedIn, setLoggedIn}) => {
                     </div>
                 </form>
             </div>
-            <ToastContainer />
+            <Toaster />
         </>
     )
 }

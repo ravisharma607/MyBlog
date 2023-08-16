@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Create.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 import Editor from '../Editor/Editor';
 
 const CreatePost = () => {
@@ -30,7 +29,7 @@ const CreatePost = () => {
     const CreateNewPost = async (e) => {
         e.preventDefault();
         if (!title || !summary || !content || !files[0]) {
-            toast.warning('All fields are required')
+            toast.error('All fields are required')
             return;
         }
         const data = new FormData();
@@ -65,7 +64,7 @@ const CreatePost = () => {
                     <button className="btn" id='btn'>Create Post</button>
                 </form>
             </div>
-            <ToastContainer />
+            <Toaster />
         </>
     )
 }

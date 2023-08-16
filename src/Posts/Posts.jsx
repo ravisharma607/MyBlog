@@ -29,7 +29,7 @@ const Posts = () => {
                     <div className="image">
                         <Link to={`/post/${item._id}`}>  <img src={'https://bloguserapi-production.up.railway.app/' + item.cover} alt='' /></Link>
                     </div>
-                    <div className="content">
+                    <div className="content flex">
                         <h2><Link to={`/post/${item._id}`}>{item.title}</Link></h2>
                         <div className="info">
                             <Link className="author"><img src={user} alt="" />{item.author ? item.author.name : 'Unknown'}</Link>

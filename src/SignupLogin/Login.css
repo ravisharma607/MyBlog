@@ -5,13 +5,13 @@
 }
 .loginSignupCard{
     position: absolute;
-    top: 50%;
+    top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 550px;
+    width: 600px;
     flex-direction: column;
     box-shadow: 2px 2px 12px rgba(0,0,0,0.2), -1px -1px 8px rgba(0,0,0,0.2);
-    padding: 40px 30px;
+    padding: 30px 30px;
 }
 .loginSignupCard .heading{
     color: gray;
@@ -24,7 +24,7 @@
 }
 .loginSignupCard .fields{
     width: 80%;
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 10px;
     text-align: center;
 }
@@ -87,6 +87,21 @@
     cursor: pointer;
     padding:5px 10px;
 }
+.profileImg{
+    flex-direction: column;
+    padding-top: 15px;
+}
+.profileImg input{
+    width: 80%;
+    margin: 10px auto;
+}
+.profileImg img{
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
 @media screen and (max-width:450px){
     .loginSignupCard{
         width: 330px;
