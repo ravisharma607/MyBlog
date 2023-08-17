@@ -11,8 +11,7 @@ const Posts = () => {
     document.title = 'MyBlog | Explore The World |';
     const allPosts = async () => {
         try {
-            // const res = await axios.get('https://bloguserapi-production.up.railway.app/posts');
-            const res = await axios.get('http://localhost:8000/posts');
+            const res = await axios.get('https://bloguserapi-production.up.railway.app/posts');
         }
         catch (e) {
         }
