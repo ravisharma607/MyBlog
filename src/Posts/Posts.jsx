@@ -12,6 +12,7 @@ const Posts = () => {
     const allPosts = async () => {
         try {
             const res = await axios.get('https://bloguserapi-production.up.railway.app/posts');
+            setPosts(res.data)
         }
         catch (e) {
         }

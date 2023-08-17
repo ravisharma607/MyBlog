@@ -24,7 +24,6 @@ const Nav = () => {
                     }
                 });
                 setUserImg(res.data.profileImg)
-                console.log('User Image:', res.data.profileImg);
             } catch (err) {
                 setLoggedIn(false);
             }
