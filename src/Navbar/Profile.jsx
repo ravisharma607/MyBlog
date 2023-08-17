@@ -1,25 +1,27 @@
 import React from 'react'
 import './Nav.css';
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import profileImg from './Img/user.png'
-const Profile = ({ userImg, name, email, onClose, setLoggedIn }) => {
-    const navigate = useNavigate();
+import { useAuth } from '../AuthContext/AuthContext';
 
+const Profile = ({ onClose }) => {
+    const navigate = useNavigate();
+    const { email, name, userImg, setLoggedIn } = useAuth();
     const logout = () => {
         localStorage.removeItem('my-token');
         onClose(true);
         setLoggedIn(false);
         navigate('/');
-      };
+    };
 
     return (
         <>
             <div className="card shadow flex">
                 <div className="close flex" onClick={onClose}>
-                <ion-icon name="close"></ion-icon>
+                    <ion-icon name="close"></ion-icon>
                 </div>
                 <div className="img">
-                    <img src={userImg ? `https://bloguserapi-production.up.railway.app/` + userImg:profileImg } alt="profile" />
+                    <img src={userImg ? `https://bloguserapi-production.up.railway.app/${userImg}` : profileImg} alt="profile" />
                     <h2>{name}</h2>
                 </div>
                 <hr />

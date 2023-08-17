@@ -66,10 +66,11 @@ nav .logo b {
     height: 35px;
     width: 35px;
     border-radius: 50px;
+    border: 1px solid #F2F2F2;
+    padding: 2px;
 }
-
-.user_action .userProfile img:hover {
-    outline: 1px solid gray;
+.user_action .userProfile img:hover{
+    border: 1px solid gray;
 }
 
 .card {

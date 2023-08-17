@@ -51,11 +51,6 @@
     background-color:rgb(246, 249, 251);
     text-transform: capitalize;
 }
-.content .author ion-icon{
-    margin-right: 10px;
-    color: #2a93d5;
-    font-weight: 600;
-}
 .content .author a{
     color: gray;
     font-weight: 600;

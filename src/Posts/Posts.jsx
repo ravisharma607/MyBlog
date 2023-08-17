@@ -32,7 +32,10 @@ const Posts = () => {
                     <div className="content flex">
                         <h2><Link to={`/post/${item._id}`}>{item.title}</Link></h2>
                         <div className="info">
-                            <Link className="author"><img src={user} alt="" />{item.author ? item.author.name : 'Unknown'}</Link>
+                            <Link className="author">
+                                <img src={item.author ? `https://bloguserapi-production.up.railway.app/${item.author.profileImg}` : user} alt="profile" />
+                                {item.author ? item.author.name : 'Unknown'}
+                            </Link>
                             <span>{format(new Date(item.createdAt), 'MMM d, yyyy HH:mm')}
                             </span>
                         </div>

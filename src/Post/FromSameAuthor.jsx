@@ -21,28 +21,29 @@ const FromSameAuthor = ({ authorID }) => {
             } else {
             }
         };
-        
+
         fetchData();
     }, [authorID]);
-    
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
-        <div className="container">
+        <section className='FromSameAuthor'>
+            <h2>More From Author</h2>
             {postFromSameAuthor.length > 0 && postFromSameAuthor.map((item, index) => {
                 return <div className="post flex" key={index}>
                     <div className="image">
                         <Link to={`/post/${item._id}`}>
-                            <img src={item.cover ? `https://bloguserapi-production.up.railway.app/${item.cover}` : user} alt='' onClick={scrollToTop}/>
+                            <img src={item.cover ? `https://bloguserapi-production.up.railway.app/${item.cover}` : user} alt='' onClick={scrollToTop} />
                         </Link>
                     </div>
                     <div className="content flex">
                         <h2><Link to={`/post/${item._id}`} onClick={scrollToTop}>{item.title}</Link></h2>
                         <div className="info">
                             <Link className="author">
-                                <img src={userProfileImg.profileImg ?`https://bloguserapi-production.up.railway.app/`+userProfileImg.profileImg: user} alt="profile" />
+                                <img src={userProfileImg.profileImg ? `https://bloguserapi-production.up.railway.app/` + userProfileImg.profileImg : user} alt="profile" />
                                 {item.author.name}
                             </Link>
                             <span>{format(new Date(item.createdAt), 'MMM d, yyyy HH:mm')}
@@ -52,7 +53,7 @@ const FromSameAuthor = ({ authorID }) => {
                     </div>
                 </div >
             })}
-        </div >
+        </section>
     )
 }
 

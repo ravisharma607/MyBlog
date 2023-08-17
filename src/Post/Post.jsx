@@ -21,6 +21,7 @@ const Post = () => {
                 document.title = res.data.title;
             }
             catch (e) {
+                console.log('From Post', e);
             }
         }
         fetchPost();
@@ -59,7 +60,7 @@ const Post = () => {
                             <div className="content">
                                 <div className="author">
                                     <Link href="#" className='author'>
-                                    <ion-icon name="person"></ion-icon>
+                                        <img src={postInfo.author ? `https://bloguserapi-production.up.railway.app/${postInfo.author.profileImg}` : user} alt="profile" />
                                         {postInfo.author ? postInfo.author.name : 'unknown'}
                                     </Link>
                                     <span>{postInfo.createdAt ? format(new Date(postInfo.createdAt), 'MMM d, yyyy HH:mm') : ''}

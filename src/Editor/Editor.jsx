@@ -12,7 +12,7 @@ const Editor = ({ value, onChange }) => {
             [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
             [{ 'list': 'ordered' }, { 'list': 'bullet' }],
             ['bold', 'italic', 'underline'],
-            ['link', 'image'], // Include the image module
+            ['link', 'image'], 
             ['clean']
         ],
     };
