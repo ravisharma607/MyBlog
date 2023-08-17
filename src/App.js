@@ -22,7 +22,7 @@ function App() {
           } />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/create' element={loggedIn ? <CreatePost /> : <Navigate to="/login" />} />
+          <Route path='/create' element={loggedIn ? <CreatePost /> : <Navigate to="/" />} />
           <Route path='/post/:id' element={loggedIn ? <Post /> : <Navigate to="/" />} />
           <Route path='/edit/:id' element={loggedIn ? <EditPost /> : <Navigate to="/" />} />
         </Route>

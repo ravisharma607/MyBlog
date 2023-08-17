@@ -1,14 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
 import writeImg from './Img/edit.png'
 import profileImg from './Img/user.png'
 import Profile from './Profile';
 import { useAuth } from '../AuthContext/AuthContext';
+import axios from 'axios';
 
 const Nav = () => {
-  const { loggedIn, userImg } = useAuth();
+  const { loggedIn, setLoggedIn } = useAuth();
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+
+  const [userImg, setUserImg] = useState('');
+
+  useEffect(() => {
+    const verifyUser = async () => {
+        const storedToken = localStorage.getItem('my-token');
+        if (storedToken) {
+            try {
+                const res = await axios.get('https://bloguserapi-production.up.railway.app/profile', {
+                    headers: {
+                        Authorization: `Bearer ${storedToken}`
+                    }
+                });
+                setUserImg(res.data.profileImg)
+                console.log('User Image:', res.data.profileImg);
+            } catch (err) {
+                setLoggedIn(false);
+            }
+        } else {
+            setLoggedIn(false);
+        }
+    };
+    verifyUser();
+})
+
 
   const handleProfileClick = () => {
     setIsProfileModalOpen(true)

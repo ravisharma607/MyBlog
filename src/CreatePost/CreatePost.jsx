@@ -11,6 +11,7 @@ const CreatePost = () => {
     const [summary, setSummary] = useState('');
     const [content, setContent] = useState('');
     const [files, setFiles] = useState('');
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
     useEffect(() => {
         const handleBeforeUnload = (e) => {
@@ -32,6 +33,7 @@ const CreatePost = () => {
             toast.error('All fields are required')
             return;
         }
+        setIsButtonDisabled(true);
         const data = new FormData();
         data.append('title', title);
         data.append('summary', summary);
@@ -49,8 +51,13 @@ const CreatePost = () => {
         }
         catch (err) {
         }
+        finally{
+            setIsButtonDisabled(false);
+        }
     }
-
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
     return (
         <>
             <div className="container">
@@ -61,7 +68,7 @@ const CreatePost = () => {
                         <input type="file" name="file" id="file" onChange={(e) => setFiles(e.target.files)} />
                     </div>
                     <Editor value={content} onChange={setContent} />
-                    <button className="btn" id='btn'>Create Post</button>
+                    <button className="btn" id='btn' onClick={scrollToTop} disabled={isButtonDisabled}>Create Post</button>
                 </form>
             </div>
             <Toaster />

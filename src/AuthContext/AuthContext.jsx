@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
             const storedToken = localStorage.getItem('my-token');
             if (storedToken) {
                 try {
-                        const res = await axios.get('https://bloguserapi-production.up.railway.app/profile', {
+                    const res = await axios.get('https://bloguserapi-production.up.railway.app/profile', {
                         headers: {
                             Authorization: `Bearer ${storedToken}`
                         }
